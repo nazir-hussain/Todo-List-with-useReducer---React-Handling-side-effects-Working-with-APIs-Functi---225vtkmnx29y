@@ -22,17 +22,37 @@
 
 
 
-import React from "react";
-import "../styles/App.css";
-const Todo = ({ title, id, handleDelete }) => {
-  return (
-    <div className="todo">
-      <div className="todo-title">{title}</div>
-      <button className="todo-delete" onClick={() => handleDelete(id)}>
-        Delete
-      </button>
-    </div>
-  );
-};
+// import React from "react";
+// import "../styles/App.css";
+// const Todo = ({ title, id, handleDelete }) => {
+//   return (
+//     <div className="todo">
+//       <div className="todo-title">{title}</div>
+//       <button className="todo-delete" onClick={() => handleDelete(id)}>
+//         Delete
+//       </button>
+//     </div>
+//   );
+// };
 
-export { Todo };
+// export { Todo };
+
+
+
+
+
+
+import React from 'react';
+import DisplayEach from './DisplayEach';
+const Todo = (props) => {
+    let i = 1;
+    return (
+        <div className="todo">
+            {console.log(props.data)}
+            {props.data.map((todo)=><DisplayEach key={i++} value={todo} handleBtn = {props.handleBtn} />)}
+        </div>
+    )
+}
+
+
+export { Todo }
